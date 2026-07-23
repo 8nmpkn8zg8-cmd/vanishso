@@ -54,6 +54,14 @@
       </h1>
     </a>
     <div class="flex items-center gap-6 text-primary font-medium text-sm">
+      <a href="/profile" class="flex gap-2 items-center">
+        <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM8 9.5c-3.314 0-6 1.343-6 3v.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-.5c0-1.657-2.686-3-6-3Z" fill="#8C77C0"/>
+        </svg>
+        <p class="hover:text-white transition-colors hidden sm:block">
+          history
+        </p>
+      </a>
       <a href="/" class="flex gap-2 items-center">
         <img class="h-4 w-4" alt="security icon" src={security} />
         <p class="hover:text-white transition-colors hidden sm:block">
