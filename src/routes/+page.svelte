@@ -88,6 +88,21 @@
       noteUrl = window.location.href + "n/" + noteid + "#" + _keyString;
     }
 
+    // persist note to local history (no sensitive data stored)
+    try {
+      const history = JSON.parse(localStorage.getItem("vanishso_notes") ?? "[]");
+      history.unshift({
+        id: noteid,
+        url: noteUrl,
+        mode: mode,
+        exp: expiry,
+        createdAt: Date.now(),
+      });
+      localStorage.setItem("vanishso_notes", JSON.stringify(history.slice(0, 100)));
+    } catch {
+      // localStorage unavailable – silently ignore
+    }
+
     // clear memory of sensitive data to be safe
     noteContent = "";
     customPassword = "";
